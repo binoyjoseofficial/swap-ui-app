@@ -1,0 +1,31 @@
+.ant-collapse {
+    border: none !important;
+    /* background-color: aquamarine; */
+    width: 100%;
+}
+
+.ant-collapse-item {
+    border: none !important;
+}
+
+.ant-collapse-header {
+    color: #fff !important;
+    padding: 0px !important;
+    cursor: pointer;
+}
+
+.ant-collapse-content {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.ant-collapse-content-box {
+    padding: 15px 0px !important;
+}
+.gasFeeHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}

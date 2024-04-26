@@ -1,23 +1,24 @@
-import { Routes, Route } from "react-router-dom";
+import { createWeb3Modal } from '@web3modal/ethers5/react'
 
-import Wep3Provider from "./Web3Provider";
-import Header from "./Header";
-import Swap from "./Swap";
-// import AddLiquidity from "./Addliquidity";
+// INTERNAL IMPORT
+import { modalConfig } from '@config'
+import { Header, Swap } from "@components"
+import { useWindowSize } from "@utils/resizeHook"
 
-import "../assets/css/App.css"
+import "@css/App.css"
 
+createWeb3Modal(modalConfig);
 
-export default function App() {
+function App() {
+  const [width, height] = useWindowSize();
+  
   return (
-    <Wep3Provider>
+    <>
+      {/* <div style={{position:"fixed", top:0, right:0}}>{width}</div> */}
       <Header />
-      <div className="mainWindow">
-        <Routes>
-          <Route path="/" element={<Swap />} />
-          {/* <Route path="/liquidity" element={<AddLiquidity />} /> */}
-        </Routes>
-      </div>
-    </Wep3Provider>
+      <Swap />
+    </>
   )
 }
+
+export default App
